@@ -188,6 +188,10 @@ class DeviceName {
       case 'iPod9,1':
         return 'iPod Touch 7th generation';
 
+      /// MARK: Simulator
+      case 'x86_64':
+        return 'Simulator';
+
       default:
         return 'unknown';
     }
