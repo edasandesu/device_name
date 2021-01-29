@@ -1,6 +1,6 @@
 name: device_name
 description: A Flutter package for getting device name from device identifier.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/edasandesu/device_name
 
 environment:
