@@ -4,7 +4,7 @@ library device_name;
 class DeviceName {
   /// Returns device generation of [machine].
   /// [machine] is device identifier.
-  String ios(String machine) {
+  String ios(String? machine) {
     switch (machine) {
 
       /// MARK: iPhone
