@@ -77,6 +77,14 @@ class DeviceName {
         return 'iPhone 12 Pro';
       case 'iPhone13,4':
         return 'iPhone 12 Pro Max';
+      case 'iPhone14,2':
+        return 'iPhone 13 Pro';
+      case 'iPhone14,3':
+        return 'iPhone 13 Pro Max';
+      case 'iPhone14,4':
+        return 'iPhone 13 mini';
+      case 'iPhone14,5':
+        return 'iPhone 13';
 
       /// MARK: iPad
       case 'iPad1,1':
