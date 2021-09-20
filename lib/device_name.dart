@@ -1,10 +1,23 @@
 library device_name;
 
+import 'package:device_name/apple_device_name.dart';
+import 'package:collection/collection.dart';
+
 /// A DeviceName.
 class DeviceName {
+  /// Returns device name of [machine].
+  /// [machine] is device identifier.
+  /// Reference is "https://gist.github.com/adamawolf/3048717".
+  Future<String?> apple(String? machine) async {
+    final appleDeviceName = AppleDeviceName();
+    final response = await appleDeviceName.fetch();
+    final devices = appleDeviceName.getDevices(response.body);
+    return devices.firstWhereOrNull((e) => e.id == machine)?.name;
+  }
+
   /// Returns device generation of [machine].
   /// [machine] is device identifier.
-  String ios(String? machine) {
+  String? ios(String? machine) {
     switch (machine) {
 
       /// MARK: iPhone
@@ -199,9 +212,6 @@ class DeviceName {
       /// MARK: Simulator
       case 'x86_64':
         return 'Simulator';
-
-      default:
-        return 'unknown';
     }
   }
 }

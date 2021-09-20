@@ -29,13 +29,15 @@ Get utsname.machine from iosInfo.
 ```dart
 import 'package:device_name/device_name.dart';
 
-void main() {
+Future<void> main() async {
   final identifier = 'iPhone13,4';
 
   final deviceName = DeviceName();
-  final generation = deviceName.ios(identifier);
+  
+  print('device name is ${deviceName.ios(identifier)}');
+  // device name is iPhone 12 Pro Max
 
-  print('device name is $generation');
+  print('device name is ${await deviceName.apple(identifier)}');
   // device name is iPhone 12 Pro Max
 }
 ```
@@ -43,3 +45,4 @@ void main() {
 ## Reference
 
 [Models - The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models)
+[Apple_mobile_device_types.txt](https://gist.github.com/adamawolf/3048717)

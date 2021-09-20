@@ -1,3 +1,8 @@
+## 0.0.4 - Sep 20, 2021.
+
+Add "iPhone 13" and "iPhone 13 Pro".
+Add new function that getting from gist.
+
 ## 0.0.3 - May 6, 2021.
 
 Migrate to null safety.
