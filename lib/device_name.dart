@@ -1,7 +1,6 @@
 library device_name;
 
 import 'package:device_name/apple_device_name.dart';
-import 'package:collection/collection.dart';
 
 /// A DeviceName.
 class DeviceName {
@@ -12,7 +11,10 @@ class DeviceName {
     final appleDeviceName = AppleDeviceName();
     final response = await appleDeviceName.fetch();
     final devices = appleDeviceName.getDevices(response.body);
-    return devices.firstWhereOrNull((e) => e.id == machine)?.name;
+    return devices
+        .cast<AppleDeviceModel?>()
+        .firstWhere((e) => e?.id == machine, orElse: () => null)
+        ?.name;
   }
 
   /// Returns device generation of [machine].

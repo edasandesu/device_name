@@ -6,6 +6,8 @@ void main() {
     final deviceName = DeviceName();
     expect(await deviceName.apple('iPhone13,4'), 'iPhone 12 Pro Max');
     expect(await deviceName.apple('iPhone14,5'), 'iPhone 13');
+    expect(await deviceName.apple(''), null);
+    expect(await deviceName.apple(null), null);
   });
 
   test('adds one to input values', () {
